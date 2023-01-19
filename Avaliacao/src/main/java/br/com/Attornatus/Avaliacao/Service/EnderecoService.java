@@ -29,4 +29,9 @@ public class EnderecoService {
         return enderecoRepository.save(endereco);
     }
 
+    @Transactional
+    public void removerEndereco(Long enderecoId){
+        pessoaRepository.deleteById(enderecoId);
+    }
+
 }

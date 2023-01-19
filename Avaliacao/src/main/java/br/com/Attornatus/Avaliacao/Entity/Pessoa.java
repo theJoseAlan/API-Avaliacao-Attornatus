@@ -1,13 +1,17 @@
 package br.com.Attornatus.Avaliacao.Entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
+@AllArgsConstructor
 @Getter
 @Setter
 @Entity
@@ -26,9 +30,4 @@ public class Pessoa {
 
     }
 
-    public Pessoa(Long id, String nome, String data_nascimento) {
-        this.id = id;
-        this.nome = nome;
-        this.data_nascimento = data_nascimento;
-    }
 }

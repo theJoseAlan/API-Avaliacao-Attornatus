@@ -1,7 +1,9 @@
 package br.com.Attornatus.Avaliacao.Controller;
 
 import br.com.Attornatus.Avaliacao.Entity.Pessoa;
+import br.com.Attornatus.Avaliacao.Repository.EnderecoRepository;
 import br.com.Attornatus.Avaliacao.Repository.PessoaRepository;
+import br.com.Attornatus.Avaliacao.Service.EnderecoService;
 import br.com.Attornatus.Avaliacao.Service.PessoaService;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
@@ -24,6 +26,8 @@ public class PessoaController {
 
     private PessoaRepository pessoaRepository;
     private PessoaService pessoaService;
+    private EnderecoRepository enderecoRepository;
+    private EnderecoService enderecoService;
 
     @GetMapping("/listar")
     public List<Pessoa> listar(){
