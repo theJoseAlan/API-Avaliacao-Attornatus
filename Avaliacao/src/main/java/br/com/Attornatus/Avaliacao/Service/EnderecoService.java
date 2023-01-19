@@ -29,6 +29,17 @@ public class EnderecoService {
         return enderecoRepository.save(endereco);
     }
 
+    /*@Transactional
+    public Endereco enderecoPrincipal(Pessoa pessoa){
+
+        Pessoa pessoa = pessoaRepository.findById(pessoa.get()
+                .getId()).orElseThrow(() -> new NegocioException("Pessoa não encontrada"));
+
+        endereco.setPessoa(pessoa);
+
+        return enderecoRepository.save(endereco);
+    }*/
+
     @Transactional
     public void removerEndereco(Long enderecoId){
         pessoaRepository.deleteById(enderecoId);
