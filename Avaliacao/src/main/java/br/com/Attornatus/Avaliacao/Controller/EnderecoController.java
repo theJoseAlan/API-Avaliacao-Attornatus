@@ -3,12 +3,14 @@ package br.com.Attornatus.Avaliacao.Controller;
 import br.com.Attornatus.Avaliacao.Domain.NegocioException;
 import br.com.Attornatus.Avaliacao.Entity.Endereco;
 import br.com.Attornatus.Avaliacao.Entity.Pessoa;
+import br.com.Attornatus.Avaliacao.Model.EnderecoModel;
 import br.com.Attornatus.Avaliacao.Repository.EnderecoRepository;
 import br.com.Attornatus.Avaliacao.Repository.PessoaRepository;
 import br.com.Attornatus.Avaliacao.Service.EnderecoService;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -41,12 +43,23 @@ public class EnderecoController {
     }
 
     @GetMapping("/principal/{pessoaId}")
-    public Pessoa enderecoPrincipal(@PathVariable Long pessoaId){
+    public ResponseEntity<EnderecoModel> enderecoPrincial(@PathVariable Long pessoaId){
 
-        Pessoa pessoa = pessoaRepository.findById(pessoaId).
-                orElseThrow(() -> new NegocioException("Pessoa não encontrada"));
+        return enderecoRepository.findById(pessoaId)
+                .map(endereco -> {
+                    EnderecoModel enderecoModel = new EnderecoModel();
 
-        return pessoa;
+                    enderecoModel.setId(endereco.getPessoa().getId());
+                    enderecoModel.setNomePessoa(endereco.getPessoa().getNome());
+                    enderecoModel.setDataNascimento(endereco.getPessoa().getData_nascimento());
+                    enderecoModel.setEndereco_log(endereco.getPessoa().getEnd_Logradouro());
+                    enderecoModel.setEnd_num(endereco.getPessoa().getNumero());
+                    enderecoModel.setEnd_cep(endereco.getPessoa().getCep());
+                    enderecoModel.setEnd_cidade(endereco.getPessoa().getCidade());
+
+                    return  ResponseEntity.ok(enderecoModel);
+                })
+                .orElse(ResponseEntity.notFound().build());
     }
 
 }
