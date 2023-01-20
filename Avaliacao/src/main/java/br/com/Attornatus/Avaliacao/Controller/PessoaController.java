@@ -1,5 +1,6 @@
 package br.com.Attornatus.Avaliacao.Controller;
 
+import br.com.Attornatus.Avaliacao.Entity.Endereco;
 import br.com.Attornatus.Avaliacao.Entity.Pessoa;
 import br.com.Attornatus.Avaliacao.Repository.EnderecoRepository;
 import br.com.Attornatus.Avaliacao.Repository.PessoaRepository;
@@ -77,11 +78,13 @@ public class PessoaController {
 
     @DeleteMapping("/remover/{pessoaId}")
     public ResponseEntity<Void> remover(@PathVariable Long pessoaId){
+
         if(!pessoaRepository.existsById(pessoaId)){
             return ResponseEntity.notFound().build();
         }
 
         pessoaService.remover(pessoaId);
+
 
         return ResponseEntity.noContent().build();
     }

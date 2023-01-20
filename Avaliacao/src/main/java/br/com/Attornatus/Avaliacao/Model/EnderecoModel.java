@@ -1,10 +1,10 @@
 package br.com.Attornatus.Avaliacao.Model;
 
-import br.com.Attornatus.Avaliacao.Entity.Endereco;
+
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.List;
+
 
 @Getter
 @Setter

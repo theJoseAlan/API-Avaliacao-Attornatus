@@ -10,10 +10,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-
 @AllArgsConstructor
 @Getter
 @Setter
@@ -24,6 +20,7 @@ public class Pessoa {
     @NotNull(groups = ValidationGroups.PessoaId.class)
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
 
     @NotBlank
     private String nome;

@@ -1,8 +1,6 @@
 package br.com.Attornatus.Avaliacao.Controller;
 
-import br.com.Attornatus.Avaliacao.Domain.NegocioException;
 import br.com.Attornatus.Avaliacao.Entity.Endereco;
-import br.com.Attornatus.Avaliacao.Entity.Pessoa;
 import br.com.Attornatus.Avaliacao.Model.EnderecoModel;
 import br.com.Attornatus.Avaliacao.Repository.EnderecoRepository;
 import br.com.Attornatus.Avaliacao.Repository.PessoaRepository;
@@ -61,5 +59,6 @@ public class EnderecoController {
                 })
                 .orElse(ResponseEntity.notFound().build());
     }
+
 
 }
