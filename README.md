@@ -46,5 +46,5 @@ Obs.2: Quando requisitado o endereço principal, irá exibir o cadastro completo
 1. É possível criar uma pessoa sem um endereço, mas não pode ser feito o inverso
 2. Você pode alterar apenas um, vários ou todos os campos na atualização
 3. A consulta por nome retornam todos os cadastros com aquele nome, se quiser um filtro mais direto, digite o nome completo da pessoa
-4. Caso didite um ID que não existe em uma consulta, o sistema retornará uma lista vazia ou um NotFound
+4. Caso digite um ID que não existe em uma consulta, o sistema retornará uma lista vazia ou um NotFound
 5. Todos os campos estão validados por anotações do tipo @NotBlank e @NotNull, então caso você deixe de inserir um valor será disparado um erro com o status, campo associado ao erro (ex: nome) e a menssagem (ex: nome não pode estar em branco")
