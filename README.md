@@ -40,7 +40,7 @@
   
 Obs.1: A consulta por contenção acontece da seguinte maneira: O consumidor digita _http://localhost:8080/pessoas/K_ e surgirá uma lista de todas as pessoas com a letra K maiúscula. Além disso, não necessariamente deve ser uma letra, mas uma sequencia ou nome completo. Lembrando que a posição da letra/palavra no nome cadastrado não faz diferença, o que importa é se contém aquela letra/palavra
 
-Obs.2: Quando requisitado o endereço principal, irá exibir o cadastro completo da pessoa, tal qual uma consulta dentro das requisições de pessoa. No entanto, a diferença é que através de um DTO o programador decide o que será exibido para o consumidor da api. Deixei tudo, mas você já entendeu que isso pode ser resolvido facilmente. Por exemplo: Poderia mostrar apenas o nome da pessoa e seu endereço principal.
+Obs.2: Quando requisitado o endereço principal, irá exibir o cadastro completo da pessoa, tal qual uma consulta dentro das requisições de pessoa. No entanto, a diferença é que através de um DTO o programador decide o que será exibido para o consumidor da api. Deixei tudo pronto para algumas possíveis alterações nesse sentido, mas você já entendeu que isso pode ser resolvido facilmente. Por exemplo: Poderia mostrar apenas o nome da pessoa e seu endereço principal.
 
 * Observações: 
 1. É possível criar uma pessoa sem um endereço, mas não pode ser feito o inverso
