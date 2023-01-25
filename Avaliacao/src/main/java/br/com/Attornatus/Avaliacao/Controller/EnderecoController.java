@@ -52,8 +52,9 @@ public class EnderecoController {
                     enderecoModel.setDataNascimento(endereco.getPessoa().getData_nascimento());
                     enderecoModel.setEndereco_log(endereco.getPessoa().getEnd_Logradouro());
                     enderecoModel.setEnd_num(endereco.getPessoa().getNumero());
-                    enderecoModel.setEnd_cep(endereco.getPessoa().getCep());
-                    enderecoModel.setEnd_cidade(endereco.getPessoa().getCidade());
+
+                    //enderecoModel.setEnd_cep(endereco.getPessoa().getCep());
+                    //enderecoModel.setEnd_cidade(endereco.getPessoa().getCidade());
 
                     return  ResponseEntity.ok(enderecoModel);
                 })
